@@ -56,7 +56,6 @@ namespace NLayer.API.Controllers
         {
             var products = await _productService.GetProductsWithCategory();
             return CreateActionResult(products);
-
         }
     }
 }
