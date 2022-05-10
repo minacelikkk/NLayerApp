@@ -11,7 +11,6 @@ namespace NLayer.API.Middleware
         {
             app.UseExceptionHandler(config =>
             {
-
                 config.Run(async context =>
                 {
                     context.Response.ContentType = "application/json";
@@ -27,7 +26,6 @@ namespace NLayer.API.Middleware
                     context.Response.StatusCode = statusCode;
                     var response = CustomResponseDto<NoContentDto>.Fail(statusCode, exceptionFeature.Error.Message);
                     await context.Response.WriteAsync(JsonSerializer.Serialize(response));
-
                 });
             });
         }
